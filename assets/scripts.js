@@ -1,6 +1,6 @@
 const posts = [
-  { title: "Post 1", content: "Konten Dari Post Pertama." },
-  { title: "Post 2", content: "Halo Semua,.<br>Ini Post Kedua" }
+  { id: "1", title: "Post Pertama", content: "Konten Dari Post Pertama." },
+  { id: "2", title: "Post Kedua", content: "Konten Dari<br>Post Kedua" }
 ];
 function showPostList() {
   const postList = document.getElementById("postList");
@@ -8,7 +8,7 @@ function showPostList() {
     const listItem = document.createElement("li");
     const link = document.createElement("a");
     link.setAttribute("href", `post.html#${index}`);
-    link.textContent = post.title;
+    link.innerHTML = `${post.id}. ${post.title}`;
     listItem.appendChild(link);
     postList.appendChild(listItem);
   });
